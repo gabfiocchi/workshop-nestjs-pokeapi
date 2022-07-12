@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  node:
+    image: node:16.16.0-bullseye
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    expose:
+      - 3080
+    ports:
+      - '3080:3001'
+    command: './.docker/node/run.sh'
